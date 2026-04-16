@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../hooks/useFriends';
@@ -16,7 +17,7 @@ const FriendsDetails = () => {
     const singleFriend = friends.find(friend => friend.id == id);
 
 
-const {settimeline} = useContext(TimelineContext)
+const {timeline,settimeline} = useContext(TimelineContext)
 
     if (!singleFriend) {
         return (

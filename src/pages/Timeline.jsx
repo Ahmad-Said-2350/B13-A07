@@ -16,7 +16,7 @@ const Timeline = () => {
     return (
         <div className="bg-[#F9FAFB] min-h-screen py-10">
             <div className="max-w-3xl mx-auto px-4">
-                <h1 className="text-2xl font-bold text-[#1F2937] mb-8">Interaction Timeline</h1>
+                <h1 className="text-2xl font-bold text-[#1F2937] mb-8"> Timeline</h1>
 
                 {timeline.length === 0 ? (
                     <div className="bg-white border border-gray-200 rounded-2xl p-16 text-center shadow-sm">
@@ -27,7 +27,7 @@ const Timeline = () => {
                         {timeline.map((item, index) => (
                             <div 
                                 key={index} 
-                                className="flex items-center gap-5 bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                                className="flex items-center gap-5 bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 "
                             >
                                 <div className="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-full border border-gray-50 shrink-0">
                                     {iconMap[item.interactionType] || iconMap.Meetup}
