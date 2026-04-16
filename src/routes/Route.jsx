@@ -12,9 +12,9 @@ export const router = createBrowserRouter([
     Component:RootLayout ,
     children: [
       { index: true, Component:Home  },
-      { path:'/Timeline',Component:Timeline },
-      {path:"/Stats",Component:Stats},
-      {path:"/FriendsDetails/:id",Component:FriendsDetails}
+      { path:'/timeline',Component:Timeline },
+      {path:"/stats",Component:Stats},
+      {path:"/friendsDetails/:id",Component:FriendsDetails}
     ]
 
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../hooks/useFriends';
 import { IoMdNotificationsOutline } from 'react-icons/io';
@@ -7,11 +7,16 @@ import { MdOutlineDelete } from 'react-icons/md';
 import { BiPhoneCall } from 'react-icons/bi';
 import { BsFillChatLeftTextFill } from 'react-icons/bs';
 import { IoVideocamOutline } from 'react-icons/io5';
+import TimelineContext from '../context/TimelineContext ';
+import { toast } from 'react-toastify';
 
 const FriendsDetails = () => {
     const { id } = useParams();
     const friends = useFriends();
     const singleFriend = friends.find(friend => friend.id == id);
+
+
+const {settimeline} = useContext(TimelineContext)
 
     if (!singleFriend) {
         return (
@@ -21,6 +26,19 @@ const FriendsDetails = () => {
         );
     }
 
+const handleFriends = (type) => {
+    const interactionData = {
+        id: singleFriend.id,
+        name: singleFriend.name,
+        picture: singleFriend.picture,
+        interactionType:  type,
+        date: new Date().toLocaleDateString()
+    };
+    
+    settimeline((prevTimeline) => [...prevTimeline, interactionData]);
+    toast.success(`${singleFriend.name} added to timeline!`);
+};
+
     const { picture, name, status, tags, email, days_since_contact, goal, next_due_date,bio } = singleFriend;
 
     const statusClass =
@@ -29,6 +47,9 @@ const FriendsDetails = () => {
             : status === "almost due"
             ? "bg-[#FAEEDA] text-[#854F0B]"
             : "bg-[#EAF3DE] text-[#3B6D11]";
+
+
+
 
     return (
         <div className="container mx-auto px-4 py-10 max-w-4xl">
@@ -68,61 +89,9 @@ const FriendsDetails = () => {
                         <MdOutlineDelete />Delete</button>
                 </div>
 
-                {/* <div className="flex flex-col gap-3">
-
-                    <div className="flex gap-3">
-                        <div className="bg-gray-50 rounded-lg p-4 text-center flex-1">
-                  <p className="text-[26px] font-medium text-[#1F2937]">{days_since_contact }</p>
-                            <p className="text-[12px] text-gray-500 mt-1">Days Since Contact</p>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-4 text-center flex-1">
-                            <p className="text-[26px] font-medium text-[#1F2937]">{goal }</p>
-                            <p className="text-[12px] text-gray-500 mt-1">Goal </p>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-4 text-center flex-1">
-                            <p className="text-[17px] font-medium text-[#1F2937]">{next_due_date}</p>
-                            <p className="text-[12px] text-gray-500 mt-1">Next Due</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 rounded-xl p-4">
-                        <div className="flex justify-between items-center mb-2">
-                            <p className="text-[14px] font-medium text-[#1F2937]">Relationship Goal</p>
-                            <button className="text-[12px] text-gray-500 bg-gray-100 border border-gray-200 rounded-md px-3 py-1 hover:bg-gray-200 transition-colors">
-                                Edit
-                            </button>
-                        </div>
-                        <p className="text-[13px] text-gray-500">
-                            Connect every <span className="font-medium text-[#1F2937]">{goal } days</span>
-                        </p>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 rounded-xl p-4">
-                        <p className="text-[14px] font-medium text-[#1F2937] mb-3">Quick Check-In</p>
-                        <div className="flex gap-3">
-
-                           
-
-                            <button className="flex flex-col items-center gap-2 py-4 px-5 border border-gray-200 rounded-lg flex-1 hover:bg-gray-50 transition-colors">
-                               
-                               <BiPhoneCall /> Call
-                            </button>
-                            <button className="flex flex-col items-center gap-2 py-4 px-5 border border-gray-200 rounded-lg flex-1 hover:bg-gray-50 transition-colors">
-                             <BsFillChatLeftTextFill />  Text
-                            </button>
-                            <button className="flex flex-col items-center gap-2 py-4 px-5 border border-gray-200 rounded-lg flex-1 hover:bg-gray-50 transition-colors">
-                             <IoVideocamOutline />   Video
-                            </button>
-
-                        </div>
-                    </div>
-
-                   
-
-                </div> */}
-
+                
 <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto ">
-  {/* Top Metrics Row - Responsive Grid */}
+
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
     <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
       <p className="text-[22px] sm:text-[26px] font-bold text-[#1F2937]">
@@ -152,7 +121,7 @@ const FriendsDetails = () => {
     </div>
   </div>
 
-  {/* Relationship Goal Card */}
+
   <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
     <div className="flex justify-between items-center gap-4 mb-2">
       <p className="text-[14px] font-semibold text-[#1F2937]">Relationship Goal</p>
@@ -165,23 +134,23 @@ const FriendsDetails = () => {
     </p>
   </div>
 
-  {/* Quick Check-In Card */}
+
   <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
     <p className="text-[14px] font-semibold text-[#1F2937] mb-4">Quick Check-In</p>
     
-    {/* Buttons stack on mobile, horizontal on tablet+ */}
+
     <div className="flex flex-col sm:flex-row gap-3">
-      <button className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-all active:bg-blue-100">
+      <button onClick={()=> handleFriends('Call')} className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-all active:bg-blue-100">
         <BiPhoneCall className="text-xl" />
         <span className="text-sm font-medium">Call</span>
       </button>
       
-      <button className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-green-50 hover:border-green-200 hover:text-green-600 transition-all active:bg-green-100">
+      <button onClick={()=> handleFriends('Text')} className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-green-50 hover:border-green-200 hover:text-green-600 transition-all active:bg-green-100">
         <BsFillChatLeftTextFill className="text-xl" />
         <span className="text-sm font-medium">Text</span>
       </button>
       
-      <button className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-600 transition-all active:bg-purple-100">
+      <button onClick={()=> handleFriends('Video')} className="flex flex-row sm:flex-col items-center justify-center gap-3 py-3 sm:py-5 px-5 border border-gray-200 rounded-xl flex-1 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-600 transition-all active:bg-purple-100">
         <IoVideocamOutline className="text-xl" />
         <span className="text-sm font-medium">Video</span>
       </button>
