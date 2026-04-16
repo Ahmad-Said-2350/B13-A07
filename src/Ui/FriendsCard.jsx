@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const FriendsCard = ({ friend }) => {
-    const {picture,name,days_since_contact,tags,status} = friend;
+    const {id,picture,name,days_since_contact,tags,status} = friend;
 
 const statusClass =
   status === "overdue"
@@ -13,7 +13,7 @@ const statusClass =
 
 
     return (
-        <Link className="card bg-base-100 w-96 shadow-sm mt-4 space-y-5">
+        <Link to={`/FriendsDetails/${id}`} className="card mx-auto bg-base-100 w-96 shadow-sm mt-4 space-y-5">
   <figure className="px-10 pt-10 ">
     <img 
       src={picture}

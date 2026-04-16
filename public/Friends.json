@@ -20,7 +20,7 @@
     "status": "almost due",
     "tags": ["school", "creative"],
     "bio": "School friend who is now a graphic designer. Loves sharing design ideas and trends.",
-    "goal": 14,
+    "goal": 11,
     "next_due_date": "2026-04-20"
   },
   {
@@ -32,7 +32,7 @@
     "status": "on-track",
     "tags": ["office", "tech"],
     "bio": "Colleague at my first job. We still talk about web development and career growth.",
-    "goal": 14,
+    "goal": 6,
     "next_due_date": "2026-04-25"
   },
   {
@@ -44,7 +44,7 @@
     "status": "overdue",
     "tags": ["family friend", "mentor"],
     "bio": "Older family friend who gives career advice and life guidance.",
-    "goal": 14,
+    "goal": 18,
     "next_due_date": "2026-04-08"
   },
   {
@@ -56,7 +56,7 @@
     "status": "almost due",
     "tags": ["gym", "health"],
     "bio": "Workout partner who keeps me motivated. We share fitness routines and diet plans.",
-    "goal": 14,
+    "goal": 19,
     "next_due_date": "2026-04-18"
   },
   {
@@ -68,7 +68,7 @@
     "status": "on-track",
     "tags": ["freelance", "network"],
     "bio": "Met through freelancing projects. We exchange client leads and productivity tips.",
-    "goal": 14,
+    "goal": 15,
     "next_due_date": "2026-04-27"
   },
   {
@@ -80,7 +80,7 @@
     "status": "overdue",
     "tags": ["childhood", "travel"],
     "bio": "Childhood friend. We used to travel during holidays and still plan trips occasionally.",
-    "goal": 14,
+    "goal": 1,
     "next_due_date": "2026-04-12"
   },
   {
@@ -92,7 +92,7 @@
     "status": "on-track",
     "tags": ["book club", "intellectual"],
     "bio": "We meet monthly for book discussions. She always recommends insightful reads.",
-    "goal": 14,
+    "goal": 13,
     "next_due_date": "2026-04-23"
   }
 ]
