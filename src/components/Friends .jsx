@@ -1,9 +1,19 @@
+import { PuffLoader } from "react-spinners";
 import useFriends from "../hooks/useFriends";
 import FriendsCard from "../Ui/FriendsCard";
 
 const Friends = () => {
 
-    const friends = useFriends();
+   const { friends, loading } = useFriends();
+
+    if (loading) {
+        return (
+           <div className="flex justify-center items-center min-h-75">
+  <PuffLoader />
+</div>
+        );
+    }
+
 
     return (
         <div className=" container mx-auto mt-20">

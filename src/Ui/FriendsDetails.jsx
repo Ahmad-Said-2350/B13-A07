@@ -13,7 +13,7 @@ import { RiNotificationSnoozeLine } from 'react-icons/ri';
 
 const FriendsDetails = () => {
     const { id } = useParams();
-    const friends = useFriends();
+    const {friends,loading} = useFriends();
     const singleFriend = friends.find(friend => friend.id == id);
 
 
@@ -43,11 +43,11 @@ const handleFriends = (type) => {
     const { picture, name, status, tags, email, days_since_contact, goal, next_due_date,bio } = singleFriend;
 
     const statusClass =
-        status === "overdue"
-            ? "bg-[#FCEBEB] text-[#A32D2D]"
-            : status === "almost due"
-            ? "bg-[#FAEEDA] text-[#854F0B]"
-            : "bg-[#EAF3DE] text-[#3B6D11]";
+       status === "overdue"
+    ? "bg-[#EF4444] text-[#FFFFFF]"
+    : status === "almost due"
+    ? "bg-[#EFAD44] text-[#FFFFFF]"
+    : "bg-[#244D3F] text-[#FFFFFF]";
 
 
 
