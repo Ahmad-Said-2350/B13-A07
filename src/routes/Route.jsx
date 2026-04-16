@@ -12,7 +12,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component:Home  },
       { path:'/Timeline',Component:Timeline },
-      {path:"/Stats",Component:Stats}
+      {path:"/Stats",Component:Stats},
+      
     ]
 
   },

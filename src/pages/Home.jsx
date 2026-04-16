@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import Hero from '../components/Hero';
+import Friends from '../components/Friends ';
 
 const Home = () => {
     return (
         <div>
-            Home
+        <Hero></Hero>
+         <Friends></Friends>
         </div>
     );
 };
