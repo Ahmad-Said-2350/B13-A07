@@ -2,7 +2,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../hooks/useFriends';
-import { IoMdNotificationsOutline } from 'react-icons/io';
 import { FaArchive } from 'react-icons/fa';
 import { MdOutlineDelete } from 'react-icons/md';
 import { BiPhoneCall } from 'react-icons/bi';
@@ -10,6 +9,7 @@ import { BsFillChatLeftTextFill } from 'react-icons/bs';
 import { IoVideocamOutline } from 'react-icons/io5';
 import TimelineContext from '../context/TimelineContext ';
 import { toast } from 'react-toastify';
+import { RiNotificationSnoozeLine } from 'react-icons/ri';
 
 const FriendsDetails = () => {
     const { id } = useParams();
@@ -81,7 +81,7 @@ const handleFriends = (type) => {
                     </div>
 
                     <button className="flex items-center gap-2 px-4 py-3 text-[13px] text-gray-500 bg-white border border-gray-200 rounded-lg w-full hover:bg-gray-50 transition-colors">
-                    <IoMdNotificationsOutline />Snooze 2 Weeks</button>
+                   <RiNotificationSnoozeLine />Snooze 2 Weeks</button>
 
                     <button className="flex items-center gap-2 px-4 py-3 text-[13px] text-gray-500 bg-white border border-gray-200 rounded-lg w-full hover:bg-gray-50 transition-colors">
                         <FaArchive />Archive</button>
