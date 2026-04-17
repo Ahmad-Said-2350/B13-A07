@@ -13,7 +13,7 @@ const statusClass =
 
 
     return (
-        <Link to={`/FriendsDetails/${id}`} className="card mx-auto bg-base-100 w-96 shadow-sm mt-4 space-y-5">
+        <Link to={`/FriendsDetails/${id}`} className="card mx-auto  bg-base-100 w-96 shadow-sm mt-4 space-y-5 lg:w-75">
   <figure className="px-10 pt-10 ">
     <img 
       src={picture}

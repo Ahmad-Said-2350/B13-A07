@@ -9,7 +9,7 @@ const Hero = () => {
 <div className=' flex justify-center items-center'>
   <button className=' btn bg-[#244D3F] text-white'> <IoMdAdd />Add a Friend</button>
 </div>
-<div className=' mt-10 w-full ml-25 md:max-w-7xl md:ml-0 mx-auto items-center justify-center  grid grid-cols-1 lg:grid-cols-4 gap-6'>
+<div className=' mt-10 w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 '>
 <div className="stats bg-base-100 border-base-300 border w-64.75 h-34.25  overflow-hidden  ">
   <div className="stat">
     

@@ -17,9 +17,9 @@ const Friends = () => {
 
     return (
         <div className=" container mx-auto mt-20">
-            <p className=" text-center lg:text-start text-[#1F2937] font-bold text-2xl">Your Friends</p>
+            <p className=" text-center md:text-center lg:text-center xl:text-start text-[#1F2937] font-bold text-2xl">Your Friends</p>
 
-            <div className=" grid grid-cols-1  lg:grid-cols-4 gap-6 container mx-auto mt-20">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   xl:grid-cols-4 gap-6 container mx-auto mt-20">
             
             {
                 friends.map((friend) => (
