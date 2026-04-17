@@ -1,16 +1,45 @@
-# React + Vite
+KeenKeeper
+Keep your friendships alive — intentionally.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+KeenKeeper is a personal relationship management app that helps you stay connected with the people who matter most. Track when you last reached out, set contact goals, and log every interaction — so no friendship slips through the cracks.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Technology  Used: 
 
-## Expanding the ESLint configuration
+React.js UI framework 
+React Router DOM  Client-side routing & navigation 
+Tailwind CSS Utility-first styling 
+DaisyUI Pre-built UI components 
+Recharts Pie chart on the Stats/Analytics page 
+React Toastify Toast notifications 
+React Spinners  Loading animation 
+React Icons  Icon library (BiPhoneCall, RiTimeLine, etc.) 
+Context API Global timeline state management 
+Vite Build tool & dev server
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+Key Features
+
+1.Friend Dashboard with Smart Status Tracking:
+
+View all your friends in a clean 4-column card grid. Each card shows the friend's photo, name, days since last contact, tags, and a color-coded status badge — **Overdue** (red), **Almost Due** (yellow), or **On Track** (green) — so you can instantly see who needs attention.
+
+2.One-Click Interaction Logging with Timeline:
+
+From any friend's detail page, log a Call, Text, orVideo interaction in one click. Each action instantly adds a timestamped entry to the global Timeline page and triggers a toast notification — giving you a full history of your relationship activity.
+
+3.Friendship Analytics with Pie Chart:
+
+The Stats page visualises your interaction history using a **Recharts donut/pie chart**, breaking down your logged interactions by type (Call / Text / Video). It updates in real-time as you log new interactions, helping you understand your communication patterns at a glance.
+
+
+
+
+
+
+
+
+
